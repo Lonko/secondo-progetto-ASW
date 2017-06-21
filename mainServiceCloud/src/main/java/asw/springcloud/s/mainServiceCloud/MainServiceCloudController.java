@@ -1,12 +1,11 @@
 package asw.springcloud.s.mainServiceCloud;
 
 import java.net.URI;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class MainServiceCloudController {
 	@Autowired
-	private DiscoveryClient discoveryClient;
+	private LoadBalancerClient loadBalancer;
 	
     /* Restituisce il numero di film in cui 
      * l'{attore} ha recitato ed il film per il 
@@ -40,24 +39,21 @@ public class MainServiceCloudController {
     }	
 	
 	private int getInt(String service, String param){
-		List<ServiceInstance> list = discoveryClient.getInstances(service);
-		if (list!=null && list.size()>0) {
-			URI uri = list.get(0).getUri();
-			if (uri!=null) {
-				String fullURI = uri.toString()+"/"+service+"/"+param;
-				return new RestTemplate().getForObject(fullURI, Integer.class);
-			}
-		}
-		return -2;
+		String uri = getServiceURI(service)+"/"+service+"/"+param;
+		return new RestTemplate().getForObject(uri, Integer.class);
 	}
 	
 	private String getString(String service, String param){
-		List<ServiceInstance> list = discoveryClient.getInstances(service);
-		if (list!=null && list.size()>0) {
-			URI uri = list.get(0).getUri();
-			if (uri!=null) {
-				String fullURI = uri.toString()+"/"+service+"/"+param;
-				return new RestTemplate().getForObject(fullURI, String.class);
+		String uri = getServiceURI(service)+"/"+service+"/"+param;
+		return new RestTemplate().getForObject(uri, String.class);
+	}
+	
+	private URI getServiceURI(String service) {
+		ServiceInstance instance = loadBalancer.choose(service);
+		if(instance!=null) {
+			URI uri = instance.getUri();
+			if(uri!=null){
+				return uri;
 			}
 		}
 		return null;
