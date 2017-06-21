@@ -11,5 +11,5 @@ public interface infoAttoreCloudClient {
 	public String getFilm(@PathVariable("attore") String attore);
 	
 	@RequestMapping("/S1/{attore}/{film}")
-    public String getPersonaggio(@PathVariable("attore") String attore, @PathVariable("film") String film);
+	public String getPersonaggio(@PathVariable("attore") String attore, @PathVariable("film") String film);
 }

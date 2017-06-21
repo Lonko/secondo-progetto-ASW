@@ -13,11 +13,13 @@ public class ServiceIntermediaryImpl implements ServiceIntermediary {
 	@Autowired private infoAttoreCloudClient iacClient;
 	@Autowired private numeroFilmCloudClient nfcClient;
 	
+	//film
 	@HystrixCommand(fallbackMethod="getFallbackFilm")
 	public String getFilm(String attore) {return iacClient.getFilm(attore);}
 	
 	public String getFallbackFilm(String attore){return "Alien";}
 
+	//personaggio
 	@HystrixCommand(fallbackMethod="getFallbackPersonaggio")
 	public String getPersonaggio(String attore, String film){
 		return iacClient.getPersonaggio(attore, film);
@@ -25,6 +27,7 @@ public class ServiceIntermediaryImpl implements ServiceIntermediary {
 	
 	public String getFallbackPersonaggio(String attore, String film){return "Ellen Ripley";}
 
+	//numero di film
 	@HystrixCommand(fallbackMethod="getFallbackNumero")
 	public int getNumeroFilm(String attore){return nfcClient.getNumeroFilm(attore);}
 	

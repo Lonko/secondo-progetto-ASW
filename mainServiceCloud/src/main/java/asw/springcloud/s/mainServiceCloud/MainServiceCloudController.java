@@ -14,7 +14,7 @@ public class MainServiceCloudController {
 	
 	@RequestMapping("/S/{attore}")
 	public String getFilm(Map<String, Object> model, @PathVariable String attore) {
-		return attore+" ha recitato in " + serviceIntermediary.getNumeroFilm(attore) +
+		return attore + " ha recitato in " + serviceIntermediary.getNumeroFilm(attore) +
 			   " film ed il film per il quale è più famoso è " +
 				serviceIntermediary.getFilm(attore) + ".";
 	}
