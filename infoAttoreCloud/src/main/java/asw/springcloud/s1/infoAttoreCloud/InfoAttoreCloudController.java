@@ -44,7 +44,8 @@ public class InfoAttoreCloudController {
     /* Restituisce il film per il
      * quale l'{attore} è più famoso
      * acceduta come GET /S1/{attore} */
-	@RequestMapping("/S1/{attore}")
+	//@RequestMapping("/S1/{attore}")
+	@RequestMapping("/{attore}")
 	public String getFilm(@PathVariable String attore) {
 		if(this.attoreFilm.containsKey(attore))
 			return this.attoreFilm.get(attore);
@@ -55,7 +56,8 @@ public class InfoAttoreCloudController {
     /* Restituisce il personaggio che l'{attore} 
      * ha interpretato nel {film}
      * acceduta come GET /S1/{attore}/{film} */
-	@RequestMapping("/S1/{attore}/{film}")
+	//@RequestMapping("/S1/{attore}/{film}")
+	@RequestMapping("/{attore}/{film}")
     public String getPersonaggio(@PathVariable String attore, @PathVariable String film) {
 		if(this.attoreFilm.containsKey(attore) && this.filmPersonaggio.containsKey(film))
 			return this.filmPersonaggio.get(film);

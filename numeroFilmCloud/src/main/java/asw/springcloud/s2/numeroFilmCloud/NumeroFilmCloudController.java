@@ -27,7 +27,8 @@ public class NumeroFilmCloudController {
     /* Restituisce il numero di film 
      * in cui l'attore ha recitato
      * acceduta come GET /S2/{attore} */
-	@RequestMapping("/S2/{attore}")
+	//@RequestMapping("/S2/{attore}")
+	@RequestMapping("/{attore}")
 	public int getNumeroFilm(@PathVariable String attore) {
 		if(this.filmGirati.containsKey(attore))
 			return this.filmGirati.get(attore);

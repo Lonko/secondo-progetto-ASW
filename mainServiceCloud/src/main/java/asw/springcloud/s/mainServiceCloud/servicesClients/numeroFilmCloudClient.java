@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @FeignClient("S2")
 public interface numeroFilmCloudClient {
 
-	@RequestMapping("/S2/{attore}")
+	//@RequestMapping("/S2/{attore}")
+	@RequestMapping("/{attore}")
 	public int getNumeroFilm(@PathVariable("attore") String attore);
 }
