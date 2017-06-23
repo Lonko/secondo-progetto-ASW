@@ -18,3 +18,4 @@
 /eurekaServer/.classpath
 /eurekaServer/.project
 /eurekaServer/.mvn/wrapper
+/swarm.inf.uniroma3.it/resources/certs/*.pem

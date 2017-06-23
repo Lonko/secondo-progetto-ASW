@@ -1,8 +1,8 @@
-# Dockerfile per l'applicazione sentence / eureka server 
+# Dockerfile per zuul
 
 FROM frolvlad/alpine-oraclejdk8 
 
-ADD build/libs/zuul-0.0.1-SNAPSHOT.jar zuul.jar
+ADD target/zuul-0.0.1-SNAPSHOT.jar zuul.jar
 
 EXPOSE 8080
 
