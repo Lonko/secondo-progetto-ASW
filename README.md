@@ -23,7 +23,7 @@ Sul servizio S2 si può effettuare un'operazione:
 
 Per effettuare dei test realistici (e quindi con stampe non casuali) si possono utilizzare i seguenti valori:
 
-* attore = "Johnny Depp" (ed eventualmente film = "Mortdecai")
+* attore = "Johnny Depp" (ed eventualmente film = "Pirati dei Caraibi")
 * attore = "Leonardo di Caprio" (ed eventualmente film = "Titanic")
 
 Nella home sono presenti i link per testare i servizi con riferimento al secondo caso (Leonardo di Caprio).
