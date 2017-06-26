@@ -7,8 +7,13 @@ Questa applicazione è accessibile al link http://swarm.inf.uniroma3.it:9004/.
 
 Le possibili operazioni che si possono effettuare sono due:
 
-* /S/\<attore>/\<film> : restituisce informazioni (casuali) sull'\<attore> (numero di film in cui ha recitato) ed il personaggio (sempre casuale) interpretato in quel \<film> 
-* /S/\<attore> : restituisce informazioni (casuali) sull'\<attore> (numero di film in cui ha recitato) ed il film (casuale) per il quale è più famoso
+* /s/\<attore>/\<film> : restituisce informazioni (casuali) sull'\<attore> (numero di film in cui ha recitato) ed il personaggio (sempre casuale) interpretato in quel \<film> 
+* /s/\<attore> : restituisce informazioni (casuali) sull'\<attore> (numero di film in cui ha recitato) ed il film (casuale) per il quale è più famoso
+
+* /s1/\<attore>/\<film> : restituisce il personaggio (casuale) interpretato in quel \<film> 
+* /s1/\<attore> : restituisce il film (casuale) per il quale è più famoso
+
+* /s2/\<attore> : restituisce informazioni (casuali) sull'\<attore> (numero di film in cui ha recitato)
 
 ### Testing
 
