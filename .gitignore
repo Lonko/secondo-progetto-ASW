@@ -19,3 +19,8 @@
 /eurekaServer/.project
 /eurekaServer/.mvn/wrapper
 /swarm.inf.uniroma3.it/resources/certs/*.pem
+/zuul/target/
+/zuul/.settings/
+/zuul/.classpath
+/zuul/.project
+/zuul/.mvn/wrapper
