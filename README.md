@@ -26,4 +26,4 @@ Per effettuare dei test realistici (e quindi con stampe non casuali) si possono 
 * attore = "Johnny Depp" (ed eventualmente film = "Mortdecai")
 * attore = "Leonardo di Caprio" (ed eventualmente film = "Titanic")
 
-Nella home sono presenti i link per testare i servizi con riferimento al primo caso (Johnny Depp).
+Nella home sono presenti i link per testare i servizi con riferimento al secondo caso (Leonardo di Caprio).
